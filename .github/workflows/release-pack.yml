@@ -1,0 +1,31 @@
+name: Release pack
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build icon pack
+        run: bash scripts/build-pack.sh
+
+      - name: Compute release tag
+        id: tag
+        run: echo "value=pack-$(date -u +%Y-%m-%d-%H%M)" >> "$GITHUB_OUTPUT"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.value }}
+          name: CNCF Miro Icon Pack ${{ steps.tag.outputs.value }}
+          body_path: dist/SOURCE.txt
+          files: dist/cncf-icons-miro.zip
