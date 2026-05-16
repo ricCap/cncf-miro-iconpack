@@ -16,9 +16,9 @@ The release tag is `pack-<UTC date>-<HHMM>`. The release body lists the upstream
 
 Requires a Miro **Education / Business / Enterprise** plan (Custom Shapes is gated).
 
-1. Download `cncf-icons-miro.zip` from the Release and unzip it. You'll get a `svg/` folder with ~200 SVGs.
+1. Download `cncf-icons-miro.zip` from the Release and unzip it. You'll get a `cncf-icons/` folder with ~200 SVGs.
 2. Open a Miro board → **Shapes** panel → **Custom Shapes** → **Browse and upload shapes**.
-3. Multi-select every SVG in `svg/` (Cmd/Ctrl+A in the file picker) and upload.
+3. Multi-select every SVG in `cncf-icons/` (Cmd/Ctrl+A in the file picker) and upload.
 
 The shape label in Miro's picker is the filename — so `kubernetes.svg` shows up as "kubernetes".
 
