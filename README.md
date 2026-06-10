@@ -1,16 +1,10 @@
 # cncf-miro-iconpack
 
-Pipeline that builds a [Miro Custom Shape pack](https://help.miro.com/hc/en-us/articles/20352896814866-Custom-Shapes-for-Diagramming) from [cncf/artwork](https://github.com/cncf/artwork) on demand. The output is a zip of one optimized SVG per active CNCF project, ready to upload to a Miro board for diagramming.
+All CNCF logos in one zip file. As easy as that.
 
-The zip itself is never committed — it's published as a GitHub Release asset.
+[![Demo: uploading the pack to Miro](assets/demo.gif)](https://www.tella.tv/video/vid_cmq7z1okr01et04jx08nf0tvc/embed?b=0&title=1&a=1&loop=0&t=0&muted=0&wt=0&o=1)
 
-## Release a new pack
-
-1. Go to the **Actions** tab → **Release pack** → **Run workflow**.
-2. Wait ~2 minutes for the job to finish.
-3. Find the zip on the newly created Release under the **Releases** page (`cncf-icons-miro.zip`).
-
-The release tag is `pack-<UTC date>-<HHMM>`. The release body lists the upstream `cncf/artwork` commit the pack was built from.
+> **Heads up:** Custom Shapes is gated behind a Miro **Education / Business / Enterprise** plan. You'll need one of those to actually upload the pack.
 
 ## Use the pack in Miro
 
@@ -21,6 +15,17 @@ Requires a Miro **Education / Business / Enterprise** plan (Custom Shapes is gat
 3. Multi-select every SVG in `cncf-icons/` (Cmd/Ctrl+A in the file picker) and upload.
 
 The shape label in Miro's picker is the filename — so `kubernetes.svg` shows up as "kubernetes".
+
+## How it works
+Pipeline that builds a [Miro Custom Shape pack](https://help.miro.com/hc/en-us/articles/20352896814866-Custom-Shapes-for-Diagramming) from [cncf/artwork](https://github.com/cncf/artwork) on demand. The output is a zip of one optimized SVG per active CNCF project, ready to upload to a Miro board for diagramming.
+
+## Release a new pack
+
+1. Go to the **Actions** tab → **Release pack** → **Run workflow**.
+2. Wait ~2 minutes for the job to finish.
+3. Find the zip on the newly created Release under the **Releases** page (`cncf-icons-miro.zip`).
+
+The release tag is `pack-<UTC date>-<HHMM>`. The release body lists the upstream `cncf/artwork` commit the pack was built from.
 
 ## Local development
 
